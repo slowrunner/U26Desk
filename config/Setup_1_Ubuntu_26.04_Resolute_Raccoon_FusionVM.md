@@ -8,7 +8,7 @@
 - Display Settings Accelerate 3D Graphics 8192 MB Shared
 - chose no internet - with proprietary drivers
 - chose basic desktop install, format/erase disk ok
-- Network Ethernet Automatic 10.0.0.192 Identity u26VM
+- Network Ethernet Automatic 
 
 === CONFIGURE SUDO GROUP PASSWORD-LESS SUDO
 
@@ -16,18 +16,21 @@ sudo nano /etc/sudoers
 
 make sudo group look like:
 
+```
 # Allow members of group sudo to execute any command with no password  
 %sudo	ALL=(ALL:ALL) NOPASSWD: ALL  
+```
 
 
-
-### First Time:
+### First Time:  
+```
 sudo apt install git
 git clone https://github.com/slowrunner/nobledesk.git
-rename nobledesk to U26Desk, and clean out old stuff
+```
+rename nobledesk to U26Desk, and clean out old stuff  
 
-=== Git setup new repo with uv
-
+=== Git setup new repo with uv  
+```
 cd U26Desk
 
 rm -rf .git
@@ -47,6 +50,6 @@ gh auth login
 Edit README.md and logs/README.md
 git commit
 gh repo create U26Desk --public --source=. --remote=origin --push
-
+```
 
 
