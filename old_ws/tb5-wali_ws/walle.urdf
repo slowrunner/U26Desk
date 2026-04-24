@@ -1,0 +1,94 @@
+<?xml version='1.0'?>
+
+<!-- FILE: walle.urdf -->
+
+<!-- maintainer: slowrunner@users.noreply.github.com -->
+
+<robot name="walle" >
+
+  <material name="solid_yellow" >
+     <color rgba="1 1 0 1" />
+  </material>
+
+  <material name="solid_orange">
+    <color rgba="1 0.647 0 1" />
+  </material>
+
+  <material name="black">
+    <color rgba="0.05 0.05 0.05 1" />
+  </material>
+
+  <material name="dark_gray">
+    <color rgba="0.663 0.663 0.663 1" />
+  </material>
+
+  <material name="red" >
+      <color rgba="1.0 0.0 0.0 1" />
+  </material>
+
+  <material name="white" >
+      <color rgba="1 1 1 0.5" />
+  </material>
+
+  <!-- Base Link - (origin is 1 cm above floor) -->
+  <link name="base_link" >
+    <visual>
+      <origin xyz="0 0 0.010" rpy="0 0 0" />
+      <geometry>
+          <sphere radius="0.005" />
+      </geometry>
+      <material name="white" />
+    </visual>
+  </link>
+
+  <link name="walle_link" >
+    <visual name="base" >
+      <origin xyz="0 0 .055" rpy="0 0 0" />
+      <geometry>
+          <box size="0.090 0.07 0.09"/>
+      </geometry>
+      <material name="solid_orange"/>
+    </visual>
+
+  </link>
+
+  <link name="left_bino_link" >
+    <visual name="left_bino" >
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+          <box size="0.100 0.06 0.035"/>
+      </geometry>
+      <material name="dark_gray"/>
+    </visual>
+  </link>
+
+  <link name="right_bino_link" >
+    <visual name="right_bino" >
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+          <box size="0.100 0.06 0.035"/>
+      </geometry>
+      <material name="dark_gray"/>
+    </visual>
+  </link>
+
+  <joint name="walle_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="walle_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0" /> 
+  </joint>
+
+  <joint name="left_bino_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="left_bino_link"/>
+    <origin xyz="0 -0.04 0.15" rpy="0 0 0" /> 
+  </joint>
+
+  <joint name="right_bino_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="right_bino_link"/>
+    <origin xyz="0 0.04 0.15" rpy="0 0 0" /> 
+  </joint>
+  
+
+</robot>
